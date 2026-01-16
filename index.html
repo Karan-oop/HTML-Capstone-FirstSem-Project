@@ -366,10 +366,10 @@
 
       cards.forEach(c => io.observe(c));
     } else {
-      // fallback — make everything visible if IntersectionObserver is not supported
+     
       cards.forEach(c => c.classList.add('is-visible'));
     }
-    
+  
     // Contact form: prevent default submit and redirect to main page (reload)
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
@@ -385,3 +385,4 @@
 
 </body>
 </html>
+
