@@ -25,6 +25,9 @@
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
 
+    <!-- hamburger menu toggle -->
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    
     <a href="reservation.html" class="nav-btn">Reservation ↗</a>
   </nav>
 </header>
@@ -160,6 +163,21 @@
       });
     });
 
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+      });
+      // Close menu when clicking a link
+      navMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          navMenu.classList.remove('open');
+        }
+      });
+    }
+    
     // close custom selects when clicking outside
     document.addEventListener('click', function () {
       document.querySelectorAll('.custom-select.open').forEach(cs => {
@@ -172,4 +190,5 @@
 </script>
 
 </body>
+
 </html>
